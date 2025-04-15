@@ -1,9 +1,14 @@
-<h2><%= @meeting.title %> - <%= @meeting.scheduled_for.strftime("%B %d, %Y %H:%M") %></h2>
+<h2 class="text-3xl font-bold mb-4"><%= @meeting.title %></h2>
+<p class="text-gray-500 mb-6">Scheduled for: <%= @meeting.scheduled_for.strftime("%A, %B %d, %Y %H:%M") %></p>
 
-<h3>Agenda Items</h3>
+<h3 class="text-xl font-semibold mb-2">Agenda</h3>
 
 <%= turbo_frame_tag "items" do %>
-  <%= render @meeting.items %>
+  <div id="agenda-items" class="space-y-3">
+    <%= render @meeting.items %>
+  </div>
 <% end %>
 
-<%= render "items/form", item: Item.new, meeting: @meeting %>
+<div class="mt-6">
+  <%= render "items/form", item: Item.new, meeting: @meeting %>
+</div>
