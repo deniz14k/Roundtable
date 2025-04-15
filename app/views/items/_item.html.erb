@@ -1,0 +1,9 @@
+<div id="<%= dom_id(item) %>" class="flex justify-between items-center py-2 border-b">
+  <div class="<%= 'line-through text-gray-500' if item.discussed %>">
+    <%= item.content %>
+  </div>
+  <div class="flex gap-2">
+    <%= button_to "✅", toggle_discussed_meeting_item_path(item.meeting, item), method: :patch, data: { turbo_stream: true }, class: "text-sm" %>
+    <%= button_to "🗑️", meeting_item_path(item.meeting, item), method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "text-sm" %>
+  </div>
+</div>

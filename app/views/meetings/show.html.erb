@@ -1,0 +1,9 @@
+<h2><%= @meeting.title %> - <%= @meeting.scheduled_for.strftime("%B %d, %Y %H:%M") %></h2>
+
+<h3>Agenda Items</h3>
+
+<%= turbo_frame_tag "items" do %>
+  <%= render @meeting.items %>
+<% end %>
+
+<%= render "items/form", item: Item.new, meeting: @meeting %>

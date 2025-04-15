@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  scheduled_for: 2025-04-15 17:24:29
+
+two:
+  title: MyString
+  scheduled_for: 2025-04-15 17:24:29

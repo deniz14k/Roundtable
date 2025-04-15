@@ -1,0 +1,4 @@
+<%= turbo_stream.append "items" do %>
+    <%= render partial: "items/item", locals: { item: @item } %>
+  <% end %>
+  
