@@ -1,0 +1,16 @@
+{
+  "name": "roundtable",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "deniz14k <ekerkaradeniz1@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.25.2"
+  },
+  "scripts": {
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets"
+  },
+  "dependencies": {
+    "@hotwired/turbo-rails": "^8.0.13"
+  }
+}
