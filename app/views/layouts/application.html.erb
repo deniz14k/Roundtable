@@ -23,6 +23,13 @@
   </head>
 
   <body class="bg-gray-100 text-gray-800 font-sans">
+
+  <% flash.each do |type, message| %>
+    <div class="mb-4 p-3 rounded text-white <%= type == 'notice' ? 'bg-green-500' : 'bg-red-500' %>">
+      <%= message %>
+    </div>
+  <% end %>
+  
   <div class="max-w-3xl mx-auto p-6">
     <%= yield %>
   </div>

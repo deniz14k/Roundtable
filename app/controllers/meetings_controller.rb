@@ -1,12 +1,12 @@
 class MeetingsController < ApplicationController
-  before_action :set_meeting, only: %i[ show edit update destroy ]
+  before_action :set_meeting, only: %i[show edit update destroy]
 
-  # GET /meetings or /meetings.json
+  # GET /meetings
   def index
     @meetings = Meeting.all
   end
 
-  # GET /meetings/1 or /meetings/1.json
+  # GET /meetings/:id
   def show
   end
 
@@ -15,11 +15,11 @@ class MeetingsController < ApplicationController
     @meeting = Meeting.new
   end
 
-  # GET /meetings/1/edit
+  # GET /meetings/:id/edit
   def edit
   end
 
-  # POST /meetings or /meetings.json
+  # POST /meetings
   def create
     @meeting = Meeting.new(meeting_params)
 
@@ -34,7 +34,7 @@ class MeetingsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /meetings/1 or /meetings/1.json
+  # PATCH/PUT /meetings/:id
   def update
     respond_to do |format|
       if @meeting.update(meeting_params)
@@ -47,24 +47,23 @@ class MeetingsController < ApplicationController
     end
   end
 
-  # DELETE /meetings/1 or /meetings/1.json
+  # DELETE /meetings/:id
   def destroy
-    @meeting.destroy!
-
-    respond_to do |format|
-      format.html { redirect_to meetings_path, status: :see_other, notice: "Meeting was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    @meeting.destroy
+    redirect_to meetings_path, notice: "Meeting was successfully destroyed."
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_meeting
-      @meeting = Meeting.find(params.expect(:id))
-    end
 
-    # Only allow a list of trusted parameters through.
-    def meeting_params
-      params.expect(meeting: [ :title, :scheduled_for ])
-    end
+  # Find the meeting by ID and handle not found errors gracefully
+  def set_meeting
+    @meeting = Meeting.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to meetings_path, alert: "Meeting not found."
+  end
+
+  # Only allow trusted parameters
+  def meeting_params
+    params.require(:meeting).permit(:title, :scheduled_for)
+  end
 end
