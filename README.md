@@ -27,7 +27,7 @@ When I saw the 37signals job post, I didn’t want to just send a CV , I wanted 
 I didn’t use React, Vue, or extra gems . I wanted to keep the stack lean and Rails-native.
 
 # Screenshots
-![First, the empty index page look like this :](screenshots/MeetingsIndexBlank) 
+![First, the empty index page look like this :](screenshots/MeetingsIndexBlank.png) 
 ![New Meeting Creation](screenshots/NewMeeting.png)
 ![Meetings list with agenda preview](screenshots/MeetingsIndex.png)  
 ![Single meeting with live agenda management](screenshots/MeetingShow.png)
