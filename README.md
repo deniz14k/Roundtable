@@ -53,7 +53,7 @@ ruby bin/rails db:create
 ruby bin/rails db:migrate
 
 ruby bin/dev
-then open localhost in your browser. ```
+then open localhost in your browser. 
 
 About me. 
 I am an engineering student with a passion for building useful tools. I love projects that stay small on purpose and help people get work done without getting in the way.
