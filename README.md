@@ -1,7 +1,6 @@
 # Roundtable – Collaborative Meeting Agenda Tool
 
-**Roundtable** is a small Ruby on Rails app I built to showcase my skills for the Junior Programmer role at 37signals. It is inspired by the way Basecamp approaches simple, purposeful software : focused, clean and thoughtful.
-
+**Roundtable** is a small Ruby on Rails app I built to learn the language. 
 # What It Does
 
 Roundtable helps teams build meeting agendas together.
@@ -12,10 +11,6 @@ Roundtable helps teams build meeting agendas together.
 - See everything update instantly with Turbo. 
 
 It is a lightweight internal tool: no fluff, just exactly what is needed.
-
-# Why I Built It
-
-When I saw the 37signals job post, I didn’t want to just send a CV , I wanted to build something small but useful so they can see that i resonate with their idea of applications . This project gave me a chance to show that I care about clean architecture, good design, and useful tools. 
 
 # Built With
 
@@ -53,9 +48,4 @@ ruby bin/rails db:migrate
 ruby bin/dev
 then open localhost in your browser. 
 
-About me. 
-I am an engineering student with a passion for building useful tools. I love projects that stay small on purpose and help people get work done without getting in the way.
-
-This app was a lot of fun to build, and I would be excited to work on similar tools at 37signals or anywhere that shares those values.
-
-Thanks for checking it out!
+Thanks for checking this out!
