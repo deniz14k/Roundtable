@@ -60,4 +60,4 @@ gem "turbo-rails", "~> 2.0"
 
 gem "jsbundling-rails", "~> 1.3"
 
-gem "tailwindcss-rails", "~> 4.2"
+gem "tailwindcss-rails", "~> 4.4"
